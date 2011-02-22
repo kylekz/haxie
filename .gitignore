@@ -1,0 +1,7 @@
+*.pbxuser
+*.perspective*
+*.mode1v3
+*.xcodeproj/xcuserdata
+*.xcodeproj/project.xcworkspace
+build
+.DS_Store

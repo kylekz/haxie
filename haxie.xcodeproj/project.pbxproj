@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		274B86FB13136B18005AC07B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 274B86FA13136B18005AC07B /* README */; };
 		275CDBA712D86543000781C0 /* dlc_glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 275CDBA312D86543000781C0 /* dlc_glyph.png */; };
 		275CDBA812D86543000781C0 /* dlc_glyph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 275CDBA412D86543000781C0 /* dlc_glyph@2x.png */; };
 		275CDBA912D86543000781C0 /* lvl_glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 275CDBA512D86543000781C0 /* lvl_glyph.png */; };
@@ -57,6 +58,7 @@
 		1D3623250D0F684500981E51 /* haxieAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = haxieAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* haxie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haxie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		274B86FA13136B18005AC07B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		275CDBA312D86543000781C0 /* dlc_glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dlc_glyph.png; sourceTree = "<group>"; };
 		275CDBA412D86543000781C0 /* dlc_glyph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dlc_glyph@2x.png"; sourceTree = "<group>"; };
 		275CDBA512D86543000781C0 /* lvl_glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl_glyph.png; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		29B97314FDCFA39411CA2CEA /* haxie */ = {
 			isa = PBXGroup;
 			children = (
+				274B86FA13136B18005AC07B /* README */,
 				27B0D18A12D6B2AD00C233B2 /* Images */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -306,6 +309,7 @@
 				275CDBAA12D86543000781C0 /* lvl_glyph@2x.png in Resources */,
 				27A1427012D8A41100C12131 /* navbar@2x.png in Resources */,
 				27A1427212D8A41F00C12131 /* navbar.png in Resources */,
+				274B86FB13136B18005AC07B /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

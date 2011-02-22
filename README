@@ -1,0 +1,17 @@
+dlc.sh .................: http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/
+LevelUnlocker ..........: http://hackulo.us/forums/index.php?/topic/103893-release-levelunlocker/
+
+Thanks to Rastignac, dlc.sh now updates the /var/mobile/supported_dlc.txt list of apps when you press the Supported Apps button.
+
+LevelUnlocker's /var/mobile/supported_levelunlocker.txt is updated by the script, as long as Ramsey uses the edit I made to it.
+
+
+-Changelog-
+1.0: Initial release.
+1.1: Added navbar, proper supported apps listing.
+1.2: Added control Depends for Erica Utilites and an in-app check for it.
+
+Over 9000 internets to cybot2006 for the name, icon and UI design.
+
+-Updating Scripts-
+Download the scripts from the above Hackulous threads, save them as 'dlc.sh' and 'levelunlocker.sh', in UNIX format, and SSH them into the /Applications/haxie.app folder. :)

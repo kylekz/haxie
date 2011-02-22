@@ -35,7 +35,7 @@
 	if ([fm fileExistsAtPath:plutil]) {
 		NSLog(@"has plutil");
 	} else {
-		UIAlertView *nopl = [[UIAlertView alloc] initWithTitle:@"haxie 1.2" message:@"You don't have Erica Utilities installed.\n\nhaxie will not function if you don't have it." delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+		UIAlertView *nopl = [[UIAlertView alloc] initWithTitle:@"haxie 1.3" message:@"You don't have Erica Utilities installed.\n\nhaxie will not function if you don't have it." delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
 		[nopl show];
 		[nopl release];
 	}

@@ -3,7 +3,7 @@
 //  haxie
 //
 //  Created by Kaikz on 7/01/11.
-//  Copyright 2011 Pedanic-dev. All rights reserved.
+//  Copyright Kaikz 2011. All rights reserved.
 //
 
 #import "haxieAppDelegate.h"

@@ -3,7 +3,7 @@
 //  haxie
 //
 //  Created by Kaikz on 7/01/11.
-//  Copyright 2011 Pedanic-dev. All rights reserved.
+//  Copyright Kaikz 2011. All rights reserved.
 //
 
 #import "LevelUnlockerViewController.h"
@@ -16,7 +16,7 @@
 -(IBAction) info {
 	UIAlertView *info = [[UIAlertView alloc]
 						 initWithTitle:@"haxie 1.3"
-						 message:@"LevelUnlocker by Ramsey\n\nTwitter: @iamramsey"
+						 message:@"LevelUnlocker by Ramsey\nTwitter: @iamramsey\n\nKaikz 2011"
 						 delegate:self
 						 cancelButtonTitle:@"Ok!"
 						 otherButtonTitles:nil];

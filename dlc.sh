@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-Version="dlc.sh - v0.4.7 (2011-02-18)"
+Version="dlc.sh - v0.4.9 (2011-02-28)"
 #
-# Thanks to: Alidsl, C4PDA, Cybot2006, Darksx, Eugénie, Farhanito, Frigis, Goriot, Joker999, Kaikz, Ramsey, Sharmanhall, Sirakain, Tiantou, Ushnak...
+# Thanks to: Alidsl, C4PDA, Cybot2006, Darksx, Eugénie, Farhanito, Frigis, Goriot, Jimmy_the_tulip, Joker999, K15bhahaha, Kaikz, Ramsey, Sharmanhall, Sirakain, Tiantou, Tootired, Ushnak...
 #
 
 
@@ -92,7 +92,15 @@ ListApp=""
 fi
 
 
+
 # # # # #
+# Thanks to Jimmy_the_tulip and Tootired for this one.
+SearchApp "AppShopper" "AppShopper.app" "http://appshopper.com/utilities/appshopper"
+if [ $? = 1 ]; then
+plutil -key 'DisableAds' -type bool -value 'true' "$tempLoc/../Library/Preferences/com.appshopper.app.plist" 2>&1> /dev/null
+Success
+fi
+
 SearchApp "ArchMageDefense" "WizardDefense.app" "http://appshopper.com/games/archmage-defense"
 if [ $? = 1 ]; then
 plutil -key 'purchased' -type bool -value 'true' "$tempLoc/../Library/Preferences/cde.WizardDefense.plist" 2>&1> /dev/null
@@ -182,7 +190,7 @@ echo "Cannot find tool 'xxd'. Install from Cydia."
 else
 plutil -key 'optionsData' "$tempLoc/../Library/Preferences/com.collect3.cobracommand.plist" | xxd -r -p > "$tempLoc/../Library/Preferences/optionsData.plist"
 plutil -xml "$tempLoc/../Library/Preferences/optionsData.plist" 2>&1> /dev/null
-cat "$tempLoc/../Library/Preferences/optionsData.plist" | tr -d '\t','\n' | \
+cat "$tempLoc/../Library/Preferences/optionsData.plist" | tr -d '\t\n' | \
 sed -e 's=<key>purchasedAllLevels</key><false/>=<key>purchasedAllLevels</key><true/>=g' \
 -e 's=<key>purchasedGodMode</key><false/>=<key>purchasedGodMode</key><true/>=g' \
 -e 's=<key>purchasedUnlimitedLives</key><false/>=<key>purchasedUnlimitedLives</key><true/>=g' \
@@ -245,6 +253,19 @@ if [ $? = 1 ]; then
 for x in "pinky" "thumb" "middle"; do
 plutil -key "com.pressokentertainment.fingerphysics.$x" -1 "$tempLoc/../Library/Preferences/com.pressokentertainment.fingerphysics.plist" 2>&1> /dev/null
 done
+Success
+fi
+
+# This one is from K15bhahaha.
+SearchApp "Fragger" "Fragger.app" "http://appshopper.com/games/fragger"
+if [ $? = 1 ]; then
+cp "$tempLoc/../Documents/config.dat" "$tempLoc/../Documents/config2.dat"
+plutil -xml "$tempLoc/../Documents/config2.dat" 2>&1> /dev/null
+cat "$tempLoc/../Documents/config2.dat" | tr -d '\t\n' | \
+sed -e 's=<key>unlimitedGrenades</key><false/>=<key>unlimitedGrenades</key><true/>=g' \
+> "$tempLoc/../Documents/config.dat"
+rm "$tempLoc/../Documents/config2.dat"
+plutil -binary "$tempLoc/../Documents/config.dat" 2>&1> /dev/null
 Success
 fi
 
@@ -495,7 +516,7 @@ fi
 #       else
 #               plutil -key 'optionsData' "$tempLoc/../Library/Preferences/com.revolutionaryconcepts.roadblaster.plist" | xxd -r -p > "$tempLoc/../Library/Preferences/optionsData.plist"
 #               plutil -xml "$tempLoc/../Library/Preferences/optionsData.plist" 2>&1> /dev/null
-#               cat "$tempLoc/../Library/Preferences/optionsData.plist" | tr -d '\t','\n' | \
+#               cat "$tempLoc/../Library/Preferences/optionsData.plist" | tr -d '\t\n' | \
 #               sed -e 's=<key>purchasedAllLevels</key><false/>=<key>purchasedAllLevels</key><true/>=g' \
 #                       -e 's=<key>purchasedGodMode</key><false/>=<key>purchasedGodMode</key><true/>=g' \
 #                       -e 's=<key>purchasedUnlimitedLives</key><false/>=<key>purchasedUnlimitedLives</key><true/>=g' \
@@ -589,9 +610,10 @@ plutil -key 'IAPVivaLaTurretPurchased' -1 "$tempLoc/../Library/Preferences/com.o
 Success
 fi
 
+# Thanks to Tootired for the update.
 SearchApp "TurboGrafx GameBox (Nec PC Engine)" "iPhone_PCE_en.app" "http://appshopper.com/games/turbografx-16-gamebox"
 if [ $? = 1 ]; then
-for x in "001genjin1" "005nectaris" "006victory" "007bouken" "008sblade" "010rtype" "011necro" "012dungeon" "014bomber94" "015vigilante" "017snindo" "018kunfu" "020gradius" "021salamander" "024wcbaseball"; do
+for x in "001genjin1" "002genjin2" "005nectaris" "006victory" "007bouken" "008sblade" "010rtype" "011necro" "012dungeon" "014bomber94" "015vigilante" "017snindo" "018kunfu" "020gradius" "021salamander" "024wcbaseball" "025twinbee" "027benkeig" "029ddungeon" "030kaizou1"; do
 plutil -key "jp.co.hudson.t16box01.$x" -type bool -value 'true' "$tempLoc/../Library/Preferences/jp.co.hudson.t16box01.plist" 2>&1> /dev/null
 done
 Success

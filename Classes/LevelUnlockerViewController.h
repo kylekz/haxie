@@ -10,19 +10,16 @@
 #import "NSTask.h"
 #import "MBProgressHUD.h"
 
-@interface LevelUnlockerViewController : UIViewController <MBProgressHUDDelegate, UIActionSheetDelegate> {
+@interface LevelUnlockerViewController : UIViewController <MBProgressHUDDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
 	NSTask *task;
 	NSTask *stask;
 	MBProgressHUD *HUD;
 	MBProgressHUD *HUD2;
-	IBOutlet UINavigationBar *navbar;
 }
 
-@property (nonatomic,retain) UINavigationBar *navbar;
 
 
 -(IBAction) run;
 -(IBAction) supported;
--(IBAction) info;
 
 @end

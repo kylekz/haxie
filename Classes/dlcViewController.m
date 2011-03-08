@@ -7,45 +7,43 @@
 //
 
 #import "dlcViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "UIDickBar.h"
 
-
 @implementation dlcViewController
-@synthesize navbar;
-
--(IBAction) info {
-	UIAlertView *info = [[UIAlertView alloc]
-						 initWithTitle:@"haxie 1.3"
-						 message:@"Visit\nhttp://hackulo.us for more information about dlc.sh.\n\nKaikz 2011"
-						 delegate:self
-						 cancelButtonTitle:@"Ok!"
-						 otherButtonTitles:nil];
-	[info show];
-	[info release];
-}
 
 -(void) viewDidLoad {
 	UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
 	self.view.backgroundColor = background;
 	[background release];
-	navbar.layer.contents = (id)[UIImage imageNamed:@"navbar.png"].CGImage;
 	NSFileManager *fm = [NSFileManager defaultManager];
 	NSString *plutil;
 	plutil = @"/usr/bin/plutil";
-	if ([fm fileExistsAtPath:plutil]) {
-		NSLog(@"has plutil");
-	} else {
-		UIAlertView *nopl = [[UIAlertView alloc] initWithTitle:@"haxie 1.3" message:@"You don't have Erica Utilities installed.\n\nhaxie will not function if you don't have it." delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+	if (![fm fileExistsAtPath:plutil]) {
+		UIAlertView *nopl = [[UIAlertView alloc] initWithTitle:@"haxie" message:@"You don't have Erica Utilities installed.\n\nhaxie will not function if you don't have it." delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
 		[nopl show];
 		[nopl release];
 	}
 	
-	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#dlc.sh" dickBadge:@"Updates!" actionBlock:^{
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/"]];
+	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#dlc.sh" dickBadge:@"Info" actionBlock:^{
+		UIAlertView *info = [[UIAlertView alloc]
+							 initWithTitle:@"haxie 1.4"
+							 message:@"Visit\nhttp://hackulo.us for more information about dlc.sh.\n\nKaikz 2011\nhttp://pwncraft.net"
+							 delegate:self
+							 cancelButtonTitle:@"Ok!"
+							 otherButtonTitles:@"Script Info", nil];
+		[info show];
+		[info release];
 	}];
 	[dickBar showInView:self.view];
 	[dickBar release];
+}
+
+- (void)alertView:(UIAlertView *)info clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 1)
+	{
+		NSURL *url = [ [ NSURL alloc ] initWithString: @"http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/" ];
+		[[UIApplication sharedApplication] openURL:url];
+	}
 }
 
 -(IBAction) run {

@@ -10,17 +10,13 @@
 #import "NSTask.h"
 #import "MBProgressHUD.h"
 
-@interface dlcViewController : UIViewController <MBProgressHUDDelegate, UIActionSheetDelegate> {
+@interface dlcViewController : UIViewController <MBProgressHUDDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
 	NSTask *task;
 	NSTask *stask;
 	MBProgressHUD *HUD;
-	IBOutlet UINavigationBar *navbar;
 }
-
-@property (nonatomic,retain) UINavigationBar *navbar;
 
 -(IBAction) run;
 -(IBAction) supported;
--(IBAction) info;
 
 @end

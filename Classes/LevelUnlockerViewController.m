@@ -1,4 +1,4 @@
-    //
+//
 //  LevelUnlockerViewController.m
 //  haxie
 //
@@ -7,35 +7,35 @@
 //
 
 #import "LevelUnlockerViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "UIDickBar.h"
 
-
 @implementation LevelUnlockerViewController
-@synthesize navbar;
-
--(IBAction) info {
-	UIAlertView *info = [[UIAlertView alloc]
-						 initWithTitle:@"haxie 1.3"
-						 message:@"LevelUnlocker by Ramsey\nTwitter: @iamramsey\n\nKaikz 2011"
-						 delegate:self
-						 cancelButtonTitle:@"Ok!"
-						 otherButtonTitles:nil];
-	[info show];
-	[info release];
-}
 
 -(void) viewDidLoad {
 	UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
 	self.view.backgroundColor = background;
 	[background release];
-	navbar.layer.contents = (id)[UIImage imageNamed:@"navbar.png"].CGImage;
 	
-	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#LevelUnlocker" dickBadge:@"Updates!" actionBlock:^{
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://hackulo.us/forums/index.php?/topic/103893-release-levelunlocker/"]];
+	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#LevelUnlocker" dickBadge:@"Info" actionBlock:^{
+		UIAlertView *info = [[UIAlertView alloc]
+							 initWithTitle:@"haxie 1.4"
+							 message:@"LevelUnlocker by Ramsey\nTwitter: @iamramsey\n\nKaikz 2011\nhttp://pwncraft.net"
+							 delegate:self
+							 cancelButtonTitle:@"Ok!"
+							 otherButtonTitles:@"Script Info", nil];
+		[info show];
+		[info release];
 	}];
 	[dickBar showInView:self.view];
 	[dickBar release];
+}
+
+- (void)alertView:(UIAlertView *)info clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 1)
+	{
+		NSURL *url = [ [ NSURL alloc ] initWithString: @"http://hackulo.us/forums/index.php?/topic/103893-release-levelunlocker/" ];
+		[[UIApplication sharedApplication] openURL:url];
+	}
 }
 
 -(IBAction) run {

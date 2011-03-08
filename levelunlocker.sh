@@ -72,7 +72,7 @@ exit 1
 clear
 echo "__________________________"
 echo "|     LevelUnlocker      |"
-echo "|         v0.3           |"
+echo "|         v0.3.1         |"
 echo "|       by Ramsey        |"
 echo "|________________________|"
 echo " "
@@ -120,7 +120,7 @@ appdir=$(grep -i "CutTheRope.app" /tmp/App_list.tmp)
 if [ ! -z "$appdir" ]; then
         echo "Unlocking levels..."
         echo "Please wait..."
-        for box in {0..4}
+        for box in {0..5}
         do
                 for lvl in {0..24}
                 do

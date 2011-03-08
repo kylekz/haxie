@@ -8,6 +8,7 @@
 
 #import "LevelUnlockerViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIDickBar.h"
 
 
 @implementation LevelUnlockerViewController
@@ -29,6 +30,12 @@
 	self.view.backgroundColor = background;
 	[background release];
 	navbar.layer.contents = (id)[UIImage imageNamed:@"navbar.png"].CGImage;
+	
+	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#LevelUnlocker" dickBadge:@"Updates!" actionBlock:^{
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://hackulo.us/forums/index.php?/topic/103893-release-levelunlocker/"]];
+	}];
+	[dickBar showInView:self.view];
+	[dickBar release];
 }
 
 -(IBAction) run {
@@ -72,9 +79,21 @@
 	// Remove HUD from screen when the HUD was hidded
 	[HUD removeFromSuperview];
 	[HUD release];
+	[HUD2 removeFromSuperview];
+	[HUD2 release];
 }
 
 -(IBAction) supported {
+	HUD2 = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
+	[self.view.window addSubview:HUD2];
+	HUD2.delegate = self;
+	HUD2.labelText = @"Running...";
+	[HUD2 showWhileExecuting:@selector(runSupported) onTarget:self withObject:nil animated:YES];
+}
+
+
+
+- (void) runSupported {
 	stask = [[NSTask alloc] init];
     [stask setLaunchPath:@"/bin/bash"];
 	NSString *script;
@@ -82,19 +101,22 @@
 	NSArray *sargs = [NSArray arrayWithObjects:script, @"-s", nil];
 	[stask setArguments: sargs];
 	[stask launch];
+	[NSThread sleepForTimeInterval:1.0];
+	
 	NSString *apps;
 	apps = [NSString stringWithContentsOfFile:@"/var/mobile/supported_levelunlocker.txt" encoding:NSUTF8StringEncoding error:nil];
 	NSFileManager *fm = [NSFileManager defaultManager];
 	if ([fm fileExistsAtPath:apps]) {
-	UIAlertView *supported = [[UIAlertView alloc] initWithTitle:@"Your Supported Apps" message:apps delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
-	[supported show];
-	[supported release];
+		UIAlertView *supported = [[UIAlertView alloc] initWithTitle:@"Your Supported Apps" message:apps delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+		[supported show];
+		[supported release];
 	} else {
 		UIAlertView *supported = [[UIAlertView alloc] initWithTitle:@"Your Supported Apps" message:@"Error generating list." delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
 		[supported show];
 		[supported release];
 	}
 }
+	
 
 
 - (void)didReceiveMemoryWarning {

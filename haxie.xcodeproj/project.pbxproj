@@ -16,6 +16,9 @@
 		275CDBA812D86543000781C0 /* dlc_glyph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 275CDBA412D86543000781C0 /* dlc_glyph@2x.png */; };
 		275CDBA912D86543000781C0 /* lvl_glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 275CDBA512D86543000781C0 /* lvl_glyph.png */; };
 		275CDBAA12D86543000781C0 /* lvl_glyph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 275CDBA612D86543000781C0 /* lvl_glyph@2x.png */; };
+		2774433F1325E6AD00B3A34B /* UIDickBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774433E1325E6AD00B3A34B /* UIDickBar.m */; };
+		277443421325E83E00B3A34B /* trends-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 277443401325E83E00B3A34B /* trends-icon.png */; };
+		277443431325E83E00B3A34B /* trends-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 277443411325E83E00B3A34B /* trends-icon@2x.png */; };
 		2790E67012D72D0600E379F2 /* unlock_levels_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2790E66C12D72D0600E379F2 /* unlock_levels_pressed.png */; };
 		2790E67112D72D0600E379F2 /* unlock_levels_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2790E66D12D72D0600E379F2 /* unlock_levels_pressed@2x.png */; };
 		2790E67212D72D0600E379F2 /* unlock_levels.png in Resources */ = {isa = PBXBuildFile; fileRef = 2790E66E12D72D0600E379F2 /* unlock_levels.png */; };
@@ -63,6 +66,10 @@
 		275CDBA412D86543000781C0 /* dlc_glyph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dlc_glyph@2x.png"; sourceTree = "<group>"; };
 		275CDBA512D86543000781C0 /* lvl_glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl_glyph.png; sourceTree = "<group>"; };
 		275CDBA612D86543000781C0 /* lvl_glyph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lvl_glyph@2x.png"; sourceTree = "<group>"; };
+		2774433D1325E6AD00B3A34B /* UIDickBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDickBar.h; sourceTree = "<group>"; };
+		2774433E1325E6AD00B3A34B /* UIDickBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDickBar.m; sourceTree = "<group>"; };
+		277443401325E83E00B3A34B /* trends-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trends-icon.png"; sourceTree = "<group>"; };
+		277443411325E83E00B3A34B /* trends-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trends-icon@2x.png"; sourceTree = "<group>"; };
 		2790E66C12D72D0600E379F2 /* unlock_levels_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock_levels_pressed.png; sourceTree = "<group>"; };
 		2790E66D12D72D0600E379F2 /* unlock_levels_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unlock_levels_pressed@2x.png"; sourceTree = "<group>"; };
 		2790E66E12D72D0600E379F2 /* unlock_levels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock_levels.png; sourceTree = "<group>"; };
@@ -133,6 +140,8 @@
 				27B0D18112D6B14400C233B2 /* LevelUnlockerViewController.m */,
 				27B0D18612D6B1BB00C233B2 /* dlcViewController.h */,
 				27B0D18712D6B1BB00C233B2 /* dlcViewController.m */,
+				2774433D1325E6AD00B3A34B /* UIDickBar.h */,
+				2774433E1325E6AD00B3A34B /* UIDickBar.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -148,6 +157,8 @@
 		27B0D18A12D6B2AD00C233B2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				277443401325E83E00B3A34B /* trends-icon.png */,
+				277443411325E83E00B3A34B /* trends-icon@2x.png */,
 				27A1427112D8A41F00C12131 /* navbar.png */,
 				27A1426F12D8A41100C12131 /* navbar@2x.png */,
 				275CDBA312D86543000781C0 /* dlc_glyph.png */,
@@ -310,6 +321,8 @@
 				27A1427012D8A41100C12131 /* navbar@2x.png in Resources */,
 				27A1427212D8A41F00C12131 /* navbar.png in Resources */,
 				274B86FB13136B18005AC07B /* README in Resources */,
+				277443421325E83E00B3A34B /* trends-icon.png in Resources */,
+				277443431325E83E00B3A34B /* trends-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +338,7 @@
 				27B0D17D12D6B0C800C233B2 /* MBProgressHUD.m in Sources */,
 				27B0D18212D6B14400C233B2 /* LevelUnlockerViewController.m in Sources */,
 				27B0D18812D6B1BB00C233B2 /* dlcViewController.m in Sources */,
+				2774433F1325E6AD00B3A34B /* UIDickBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

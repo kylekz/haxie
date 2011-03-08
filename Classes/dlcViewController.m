@@ -8,6 +8,7 @@
 
 #import "dlcViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIDickBar.h"
 
 
 @implementation dlcViewController
@@ -39,6 +40,12 @@
 		[nopl show];
 		[nopl release];
 	}
+	
+	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#dlc.sh" dickBadge:@"Updates!" actionBlock:^{
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/"]];
+	}];
+	[dickBar showInView:self.view];
+	[dickBar release];
 }
 
 -(IBAction) run {
@@ -92,9 +99,11 @@
 	NSArray *sargs = [NSArray arrayWithObjects:script, @"-txt", nil];
 	[stask setArguments: sargs];
 	[stask launch];
+	[NSThread sleepForTimeInterval:1.0];
+	
 	NSString *apps;
 	apps = [NSString stringWithContentsOfFile:@"/var/mobile/supported_dlc.txt" encoding:NSUTF8StringEncoding error:nil];
-	NSFileManager *fm = [NSFileManager defaultManager];
+		NSFileManager *fm = [NSFileManager defaultManager];
 	if ([fm fileExistsAtPath:apps]) {
 		UIAlertView *supported = [[UIAlertView alloc] initWithTitle:@"Supported Apps" message:apps delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
 		[supported show];
@@ -104,8 +113,7 @@
 		[supported show];
 		[supported release];
 	}
-}
-
+} 
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -123,6 +131,7 @@
 
 - (void)dealloc {
     [super dealloc];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 

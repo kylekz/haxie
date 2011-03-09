@@ -131,7 +131,7 @@ if [ ! -z "$appdir" ]; then
                         done
                 done
                 echo "Cut the Rope: Unlocked! "
-fi
+fi 
 
 #Cut the Rope Holiday Gift
 #by Ramsey

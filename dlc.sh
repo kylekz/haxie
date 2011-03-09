@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 Version="dlc.sh - v0.4.9 (2011-02-28)"
-#
+# 
 # Thanks to: Alidsl, C4PDA, Cybot2006, Darksx, Eugénie, Farhanito, Frigis, Goriot, Jimmy_the_tulip, Joker999, K15bhahaha, Kaikz, Ramsey, Sharmanhall, Sirakain, Tiantou, Tootired, Ushnak...
 #
 

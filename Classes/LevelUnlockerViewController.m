@@ -79,21 +79,13 @@
 	// Remove HUD from screen when the HUD was hidded
 	[HUD removeFromSuperview];
 	[HUD release];
-	[HUD2 removeFromSuperview];
-	[HUD2 release];
-}
-
--(IBAction) supported {
-	HUD2 = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
-	[self.view.window addSubview:HUD2];
-	HUD2.delegate = self;
-	HUD2.labelText = @"Running...";
-	[HUD2 showWhileExecuting:@selector(runSupported) onTarget:self withObject:nil animated:YES];
 }
 
 
-
-- (void) runSupported {
+/* This is broken. NSTask is fucked. I fail. No idea how to fix.
+ 
+ 
+ -(IBAction) supported {
 	stask = [[NSTask alloc] init];
     [stask setLaunchPath:@"/bin/bash"];
 	NSString *script;
@@ -101,8 +93,6 @@
 	NSArray *sargs = [NSArray arrayWithObjects:script, @"-s", nil];
 	[stask setArguments: sargs];
 	[stask launch];
-	[NSThread sleepForTimeInterval:1.0];
-	
 	NSString *apps;
 	apps = [NSString stringWithContentsOfFile:@"/var/mobile/supported_levelunlocker.txt" encoding:NSUTF8StringEncoding error:nil];
 	NSFileManager *fm = [NSFileManager defaultManager];
@@ -116,8 +106,18 @@
 		[supported release];
 	}
 }
-	
+*/
 
+-(IBAction) supported {
+	UIAlertView *thread = [[UIAlertView alloc]
+						   initWithTitle:@"haxie"
+						   message:@"This requires a Hackulo.us forum account. Continue?"
+						   delegate:self
+						   cancelButtonTitle:@"Cancel"
+						   otherButtonTitles:@"Go", nil];
+	[thread show];
+	[thread release];
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.

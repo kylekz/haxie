@@ -43,6 +43,7 @@
 		27B0D1D412D6BC3800C233B2 /* dlc.sh in Resources */ = {isa = PBXBuildFile; fileRef = 27B0D1D312D6BC3800C233B2 /* dlc.sh */; };
 		27B0D1D612D6BC4400C233B2 /* levelunlocker.sh in Resources */ = {isa = PBXBuildFile; fileRef = 27B0D1D512D6BC4400C233B2 /* levelunlocker.sh */; };
 		27CBC28E12E1A7E2006BE46C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CBC28D12E1A7E2006BE46C /* QuartzCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		27F4B4BD132CB28D007B02A2 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F4B4BC132CB28D007B02A2 /* MainWindow-iPad.xib */; };
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
@@ -92,6 +93,7 @@
 		27B0D1D312D6BC3800C233B2 /* dlc.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dlc.sh; sourceTree = "<group>"; };
 		27B0D1D512D6BC4400C233B2 /* levelunlocker.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = levelunlocker.sh; sourceTree = "<group>"; };
 		27CBC28D12E1A7E2006BE46C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		27F4B4BC132CB28D007B02A2 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		2840D7CD1179279E00D7F93C /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		27F4B4BB132CB28A007B02A2 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				27F4B4BC132CB28D007B02A2 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* haxie */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +189,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				27F4B4BB132CB28A007B02A2 /* iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				27CBC28D12E1A7E2006BE46C /* QuartzCore.framework */,
@@ -299,6 +310,7 @@
 				274B86FB13136B18005AC07B /* README in Resources */,
 				277443421325E83E00B3A34B /* trends-icon.png in Resources */,
 				277443431325E83E00B3A34B /* trends-icon@2x.png in Resources */,
+				27F4B4BD132CB28D007B02A2 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +348,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = haxie;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -350,6 +363,7 @@
 				INFOPLIST_FILE = "haxie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = haxie;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

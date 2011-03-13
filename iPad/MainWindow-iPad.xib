@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
+<archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
 		<string key="IBDocument.SystemVersion">10J567</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
+		<string key="IBDocument.InterfaceBuilderVersion">844</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">462.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">300</string>
+			<string key="NS.object.0">141</string>
 		</object>
-		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
+		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>IBUIViewController</string>
-			<string>IBUITabBar</string>
-			<string>IBProxyObject</string>
-			<string>IBUIWindow</string>
-			<string>IBUICustomObject</string>
-			<string>IBUIView</string>
-			<string>IBUITabBarController</string>
-			<string>IBUIButton</string>
-			<string>IBUITabBarItem</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -31,60 +22,62 @@
 			<object class="NSArray" key="dict.sortedKeys" id="0">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 			</object>
-			<reference key="dict.values" ref="0"/>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+			</object>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="IBProxyObject" id="841351856">
 				<string key="IBProxiedObjectIdentifier">IBFilesOwner</string>
-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBProxyObject" id="532797962">
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUICustomObject" id="664661524">
-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIWindow" id="380026005">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">1316</int>
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
-				<string key="NSFrameSize">{320, 480}</string>
-				<reference key="NSSuperview"/>
+				<string key="NSFrameSize">{768, 1004}</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
 				</object>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics" id="439312191">
+					<int key="IBUIStatusBarStyle">2</int>
+				</object>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIResizesToFullScreen">YES</bool>
 			</object>
 			<object class="IBUITabBarController" id="1034742383">
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
-				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+				<reference key="IBUISimulatedStatusBarMetrics" ref="439312191"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-					<int key="IBUIInterfaceOrientation">1</int>
 					<int key="interfaceOrientation">1</int>
 				</object>
-				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
 				<object class="IBUIViewController" key="IBUISelectedViewController" id="268481961">
 					<object class="IBUIView" key="IBUIView" id="902395801">
-						<reference key="NSNextResponder"/>
+						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">274</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIButton" id="27986694">
 								<reference key="NSNextResponder" ref="902395801"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 56}, {280, 88}}</string>
+								<string key="NSFrame">{{244, 308}, {280, 88}}</string>
 								<reference key="NSSuperview" ref="902395801"/>
 								<reference key="NSNextKeyView" ref="394040487"/>
 								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<object class="NSFont" key="IBUIFont" id="1004052867">
@@ -116,11 +109,11 @@
 							<object class="IBUIButton" id="394040487">
 								<reference key="NSNextResponder" ref="902395801"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 206}, {280, 88}}</string>
+								<string key="NSFrame">{{244, 458}, {280, 88}}</string>
 								<reference key="NSSuperview" ref="902395801"/>
 								<reference key="NSNextKeyView" ref="795333663"/>
 								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<reference key="IBUIFont" ref="1004052867"/>
@@ -140,14 +133,13 @@
 								</object>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 20}, {320, 411}}</string>
-						<reference key="NSSuperview"/>
+						<string key="NSFrameSize">{768, 955}</string>
 						<reference key="NSNextKeyView" ref="27986694"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="320936691">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MAA</bytes>
 						</object>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 					<object class="IBUITabBarItem" key="IBUITabBarItem" id="807309489">
 						<string key="IBUITitle">LevelUnlocker</string>
@@ -155,15 +147,14 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">lvl_glyph.png</string>
 						</object>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
 					<string key="IBUINibName">SecondView</string>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-						<int key="IBUIInterfaceOrientation">1</int>
 						<int key="interfaceOrientation">1</int>
 					</object>
-					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
@@ -177,11 +168,11 @@
 								<object class="IBUIButton" id="119051428">
 									<reference key="NSNextResponder" ref="727753434"/>
 									<int key="NSvFlags">292</int>
-									<string key="NSFrame">{{20, 56}, {280, 88}}</string>
+									<string key="NSFrame">{{244, 308}, {280, 88}}</string>
 									<reference key="NSSuperview" ref="727753434"/>
 									<reference key="NSNextKeyView" ref="757096207"/>
 									<bool key="IBUIOpaque">NO</bool>
-									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 									<int key="IBUIContentHorizontalAlignment">0</int>
 									<int key="IBUIContentVerticalAlignment">0</int>
 									<reference key="IBUIFont" ref="1004052867"/>
@@ -203,10 +194,10 @@
 								<object class="IBUIButton" id="757096207">
 									<reference key="NSNextResponder" ref="727753434"/>
 									<int key="NSvFlags">292</int>
-									<string key="NSFrame">{{20, 206}, {280, 88}}</string>
+									<string key="NSFrame">{{244, 458}, {280, 88}}</string>
 									<reference key="NSSuperview" ref="727753434"/>
 									<bool key="IBUIOpaque">NO</bool>
-									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 									<int key="IBUIContentHorizontalAlignment">0</int>
 									<int key="IBUIContentVerticalAlignment">0</int>
 									<reference key="IBUIFont" ref="1004052867"/>
@@ -220,9 +211,9 @@
 									<reference key="IBUINormalImage" ref="711569606"/>
 								</object>
 							</object>
-							<string key="NSFrame">{{0, 20}, {320, 411}}</string>
+							<string key="NSFrameSize">{768, 955}</string>
 							<reference key="IBUIBackgroundColor" ref="320936691"/>
-							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="765670903">
 							<string key="IBUITitle">dlc.sh</string>
@@ -230,31 +221,28 @@
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">dlc_glyph.png</string>
 							</object>
-							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
 						<string key="IBUINibName">FirstView</string>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-							<int key="IBUIInterfaceOrientation">1</int>
 							<int key="interfaceOrientation">1</int>
 						</object>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
 					</object>
 					<reference ref="268481961"/>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="795333663">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>
 					</object>
 					<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				</object>
 			</object>
 		</object>
@@ -458,6 +446,7 @@
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
 					<string>106.IBEditorWindowLastContentRect</string>
+					<string>106.IBLastUsedUIStatusBarStylesToTargetRuntimesMap</string>
 					<string>106.IBPluginDependency</string>
 					<string>107.IBPluginDependency</string>
 					<string>108.CustomClassName</string>
@@ -480,6 +469,7 @@
 					<string>133.IBViewBoundsToFrameTransform</string>
 					<string>2.IBAttributePlaceholdersKey</string>
 					<string>2.IBEditorWindowLastContentRect</string>
+					<string>2.IBLastUsedUIStatusBarStylesToTargetRuntimesMap</string>
 					<string>2.IBPluginDependency</string>
 					<string>3.CustomClassName</string>
 					<string>3.IBPluginDependency</string>
@@ -489,6 +479,10 @@
 					<string>UIApplication</string>
 					<string>UIResponder</string>
 					<string>{{322, 172}, {320, 480}}</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">IBCocoaTouchFramework</string>
+						<integer value="0" key="NS.object.0"/>
+					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>dlcViewController</string>
@@ -524,9 +518,15 @@
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference key="dict.sortedKeys" ref="0"/>
-						<reference key="dict.values" ref="0"/>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 					</object>
 					<string>{{229, 373}, {320, 480}}</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">IBCocoaTouchFramework</string>
+						<integer value="0" key="NS.object.0"/>
+					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>haxieAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -535,20 +535,24 @@
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<reference key="dict.sortedKeys" ref="0"/>
-				<reference key="dict.values" ref="0"/>
+				<object class="NSMutableArray" key="dict.values">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+				</object>
 			</object>
 			<nil key="activeLocalization"/>
 			<object class="NSMutableDictionary" key="localizations">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<reference key="dict.sortedKeys" ref="0"/>
-				<reference key="dict.values" ref="0"/>
+				<object class="NSMutableArray" key="dict.values">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+				</object>
 			</object>
 			<nil key="sourceID"/>
 			<int key="maxID">197</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
 			<integer value="1056" key="NS.object.0"/>
@@ -558,6 +562,7 @@
 			<integer value="3100" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+		<nil key="IBDocument.LastKnownRelativeProjectPath"/>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -584,6 +589,6 @@
 				<string>{209, 80}</string>
 			</object>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">300</string>
+		<string key="IBCocoaTouchPluginVersion">141</string>
 	</data>
 </archive>

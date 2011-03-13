@@ -14,7 +14,6 @@
 	NSTask *task;
 	NSTask *stask;
 	MBProgressHUD *HUD;
-	MBProgressHUD *HUD2;
 }
 
 

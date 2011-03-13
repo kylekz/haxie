@@ -89,6 +89,8 @@
 	[HUD release];
 }
 
+/* This is broken. NSTask is fucked. I fail. No idea how to fix.
+
 -(IBAction) supported {
 	stask = [[NSTask alloc] init];
     [stask setLaunchPath:@"/bin/bash"];
@@ -97,11 +99,9 @@
 	NSArray *sargs = [NSArray arrayWithObjects:script, @"-txt", nil];
 	[stask setArguments: sargs];
 	[stask launch];
-	[NSThread sleepForTimeInterval:1.0];
-	
 	NSString *apps;
 	apps = [NSString stringWithContentsOfFile:@"/var/mobile/supported_dlc.txt" encoding:NSUTF8StringEncoding error:nil];
-		NSFileManager *fm = [NSFileManager defaultManager];
+	NSFileManager *fm = [NSFileManager defaultManager];
 	if ([fm fileExistsAtPath:apps]) {
 		UIAlertView *supported = [[UIAlertView alloc] initWithTitle:@"Supported Apps" message:apps delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
 		[supported show];
@@ -111,8 +111,21 @@
 		[supported show];
 		[supported release];
 	}
-} 
+}
 
+*/
+
+-(IBAction) supported {
+	UIAlertView *thread = [[UIAlertView alloc]
+						   initWithTitle:@"haxie"
+						   message:@"This requires a Hackulo.us forum account. Continue?"
+						   delegate:self
+						   cancelButtonTitle:@"Cancel"
+						   otherButtonTitles:@"Go", nil];
+	[thread show];
+	[thread release];
+}
+ 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];

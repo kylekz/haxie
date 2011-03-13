@@ -11,7 +11,7 @@ LevelUnlocker's /var/mobile/supported_levelunlocker.txt is updated by the script
 1.1: Added navbar, proper supported apps listing.
 1.2: Added control Depends for Erica Utilites and an in-app check for it.
 1.3: Added annoying UIDickBar.
-1.4: Updated dlc.sh to v0.4.9 (2011-02-28), LevelUnlocker to 0.3.1, replaced navbars with UIDickBars, tab 'em for more info, removed (i) info buttons.
+1.4: Updated dlc.sh to v0.4.9 (2011-02-28), LevelUnlocker to 0.3.1, replaced navbars with UIDickBars, tab 'em for more info, removed (i) info buttons, changed supported apps button to go to Hackulous threads.
 
 Over 9000 internets to cybot2006 for the name, icon and UI design.
 

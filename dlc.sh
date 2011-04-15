@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-Version="dlc.sh - v0.4.9 (2011-02-28)"
-# 
-# Thanks to: Alidsl, C4PDA, Cybot2006, Darksx, Eugénie, Farhanito, Frigis, Goriot, Jimmy_the_tulip, Joker999, K15bhahaha, Kaikz, Ramsey, Sharmanhall, Sirakain, Tiantou, Tootired, Ushnak...
+Version="dlc.sh - v0.6.5 (2011-04-07)"
+#
+# Thanks to: Alidsl, C4PDA, Cybot2006, Darksx, Eugénie, Fabius, Farhanito, Frigis, Fusen, Goriot, Jimmy_the_tulip, Joker999, K15bhahaha, Kaikz, Kingmoe738, Ramsey, Scruffy32, Sharmanhall, Sirakain, Tiantou, Tootired, Ushnak...
 #
 
 
@@ -23,7 +23,7 @@ return 0
 fi
 
 echo -n "- $AppName. "
-tempLoc=$(grep -i "$AppDir" /tmp/lsd.tmp)
+tempLoc=$(grep "/$AppDir" /tmp/lsd.tmp)
 if [ ! -z "$tempLoc" ]; then
 AppCount=$(echo "$tempLoc" | wc -l)
 if [ $AppCount -gt 1 ]; then
@@ -91,9 +91,13 @@ number=0
 ListApp=""
 fi
 
+# This one is from Tiantou.
+SearchApp "Age of Wind" "wind.app" "http://appshopper.com/games/age-of-wind"
+if [ $? = 1 ]; then
+plutil -key 'com.galapagossoft.wind.fullversion2' -1 "$tempLoc/../Library/Preferences/com.galapagossoft.wind.plist" 2>&1> /dev/null
+Success
+fi
 
-
-# # # # #
 # Thanks to Jimmy_the_tulip and Tootired for this one.
 SearchApp "AppShopper" "AppShopper.app" "http://appshopper.com/utilities/appshopper"
 if [ $? = 1 ]; then
@@ -127,6 +131,13 @@ plutil -key '' -value '1' "$tempLoc/../Documents/upgrade1.plist" 2>&1> /dev/null
 Success
 fi
 
+# This one is from Jimmy_the_tulip.
+SearchApp "Boxcar" "Boxcar.app" "http://appshopper.com/social-networking/boxcar-twitter-push-notifications"
+if [ $? = 1 ]; then
+plutil -key 'display_ads' -type bool -value 'false' "$tempLoc/../Library/Preferences/net.jdg.Boxcar.plist" 2>&1> /dev/null
+Success
+fi
+
 SearchApp "Buster Red" "nunix2.app" "http://appshopper.com/games/buster-red"
 if [ $? = 1 ]; then
 for x in "E" "QU"; do
@@ -144,19 +155,32 @@ done
 Success
 fi
 
+# This one is from Scruffy32.
+SearchApp "CandyLand (old)" "CandyLandDis.app" "http://appshopper.com/games/candyland"
+if [ $? = 1 ]; then
+plutil -key 'hasPurchased' -value 'true' "$tempLoc/../Library/Preferences/com.softmines.candyland.plist" 2>&1> /dev/null
+Success
+fi
+SearchApp "CandyLand (new)" "FantasyWorld.app" "http://appshopper.com/games/candyland"
+if [ $? = 1 ]; then
+plutil -key 'hasPurchased' -value 'true' "$tempLoc/../Library/Preferences/com.softmines.candyland.plist" 2>&1> /dev/null
+Success
+fi
+
 SearchApp "Capcom Arcade" "capcomacUS.app" "http://appshopper.com/games/capcom-arcade"
 if [ $? = 1 ]; then
-plutil -key 'cheatitem_1942' -value '7' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-#plutil -key 'cheatitem_1943' -value 'xxx' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'cheatitem_daimakai' -value '15' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-#plutil -key 'cheatitem_ff' -value 'xxx' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'cheatitem_ikusa' -value '7' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'cheatitem_makai' -value '15' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'cheatitem_st2' -value '3' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'cheatitem_st2dash' -value '3' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'gamebase' -value '255' "$tempLoc/../Library/Preferences/CCC.plist" 2>&1> /dev/null
-plutil -key 'ticket' -value '9' "$tempLoc/../Library/Caches/CCC.plist" 2>&1> /dev/null
-plutil -key 'token' -value '99' "$tempLoc/../Library/Caches/CCC.plist" 2>&1> /dev/null
+p="$tempLoc/../Library/Preferences/CCC.plist"
+plutil -key 'cheatitem_1942' -value '7' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_1943' -value '15' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_daimakai' -value '15' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_ff' -value '7' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_ikusa' -value '7' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_makai' -value '15' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_st2' -value '3' "$p" 2>&1> /dev/null
+plutil -key 'cheatitem_st2dash' -value '3' "$p" 2>&1> /dev/null
+plutil -key 'gamebase' -value '511' "$p" 2>&1> /dev/null
+plutil -key 'ticket' -value '9' "$p" 2>&1> /dev/null
+plutil -key 'token' -value '99' "$p" 2>&1> /dev/null
 Success
 fi
 
@@ -211,7 +235,7 @@ fi
 
 SearchApp "Cooking Mama" "CookingMama.app" "http://appshopper.com/games/cooking-mama"
 if [ $? = 1 ]; then
-plutil -key 'save_prch_flag' -type int -value '255' "$tempLoc/../Library/Preferences/R29F49NJNY.jp.co.taito.cookingmama.plist" 2>&1> /dev/null
+plutil -key 'save_prch_flag' -type int -value '511' "$tempLoc/../Library/Preferences/R29F49NJNY.jp.co.taito.cookingmama.plist" 2>&1> /dev/null
 Success
 fi
 
@@ -247,7 +271,7 @@ plutil -key 'net.naan.EchofonPro' -type bool -value 'true' "$tempLoc/../Library/
 Success
 fi
 
-SearchApp "Finger Physics" "FingerPhysics.app" "http://appshopper.com/games/finger-physics"
+SearchApp "Finger Physics (old)" "FingerPhysics.app" "http://appshopper.com/games/finger-physics"
 if [ $? = 1 ]; then
 #       plutil -key 'mail pack' -1 "$tempLoc/../Library/Preferences/com.pressokentertainment.fingerphysics.plist" 2>&1> /dev/null
 for x in "pinky" "thumb" "middle"; do
@@ -255,6 +279,14 @@ plutil -key "com.pressokentertainment.fingerphysics.$x" -1 "$tempLoc/../Library/
 done
 Success
 fi
+#SearchApp "Finger Physics (new)" "FingerPhysics.1.app" "http://appshopper.com/games/finger-physics"
+#if [ $? = 1 ]; then
+##      plutil -key 'mail pack' -1 "$tempLoc/../Library/Preferences/com.pressokentertainment.fingerphysics.plist" 2>&1> /dev/null
+#       for x in "pinky" "thumb" "middle"; do
+#               plutil -key "com.pressokentertainment.fingerphysics.$x" -1 "$tempLoc/../Library/Preferences/com.pressokentertainment.fingerphysics.plist" 2>&1> /dev/null
+#       done
+#       Success
+#fi
 
 # This one is from K15bhahaha.
 SearchApp "Fragger" "Fragger.app" "http://appshopper.com/games/fragger"
@@ -309,6 +341,13 @@ dd bs=1 seek=342 conv=notrunc status=noxfer of="$tempLoc/../Documents/sp0.txt" 2
 Success
 fi
 
+# This one is from Scruffy32.
+SearchApp "Gravity Sling (not Deluxe)" "Gravity Sling.app" "http://appshopper.com/games/gravity-sling"
+if [ $? = 1 ]; then
+plutil -key 'UnlockedLevelPacks' -type json -value '["DefaultLevelPack","com.riptidegames.gravitysling.levelpack_0001","com.riptidegames.gravitysling.levelpack_0002","com.riptidegames.gravitysling.levelpack_0003"]' "$tempLoc/../Library/Preferences/com.riptidegames.gravitysling.plist" 2>&1> /dev/null
+Success
+fi
+
 # This one is from Tiantou.
 SearchApp "Highborn (SD or HD)" "Highborn.app" "http://appshopper.com/games/highborn"
 # http://appshopper.com/games/highborn-hd
@@ -318,6 +357,18 @@ plutil -key 'Chapter1Unlock' -1 "$tempLoc/../Library/Preferences/net.jetsetgames
 else
 plutil -key 'Chapter1Unlock' -1 "$tempLoc/../Library/Preferences/net.jetsetgames.Highborn.plist" 2>&1> /dev/null
 fi
+Success
+fi
+
+# This one is from Tiantou
+SearchApp "Hoggy" "Hoggy.app" "http://appshopper.com/games/hoggy"
+if [ $? = 1 ]; then
+if [ ! -e "$tempLoc/../Library/Preferences/com.raptisoft.hoggy.plist" ]; then
+plutil -create "$tempLoc/../Library/Preferences/com.raptisoft.hoggy.plist" 2>&1> /dev/null
+chmod 666 "$tempLoc/../Library/Preferences/com.raptisoft.hoggy.plist"
+fi
+plutil -key 'com.raptisoft.hoggy.lostlevels' -1 "$tempLoc/../Library/Preferences/com.raptisoft.hoggy.plist" 2>&1> /dev/null
+plutil -key 'com.raptisoft.hoggy.lostlevels2' -1 "$tempLoc/../Library/Preferences/com.raptisoft.hoggy.plist" 2>&1> /dev/null
 Success
 fi
 
@@ -407,6 +458,12 @@ plutil -key 'coinCount' -value 22222 "$tempLoc/../Library/Preferences/com.kongzh
 Success
 fi
 
+SearchApp "Overkill" "Overkill.app" "http://appshopper.com/games/overkill"
+if [ $? = 1 ]; then
+plutil -key 'money' -type int -value '99999' "$tempLoc/../Library/Preferences/com.craneballs.overkillgold.plist" 2>&1> /dev/null
+plutil -key 'okMedals' -type int -value '9999' "$tempLoc/../Library/Preferences/com.craneballs.overkillgold.plist" 2>&1> /dev/null
+fi
+
 SearchApp "Pandorum" "pandorum.app" "http://appshopper.com/games/pandorum"
 if [ $? = 1 ]; then
 plutil -key 'rmsaddon' -value '1' "$tempLoc/../Documents/RMS.txt" 2>&1> /dev/null
@@ -420,10 +477,34 @@ plutil -key '__ASSKBC._d' -type bool -value 'true' "$tempLoc/../Library/Preferen
 Success
 fi
 
+# Copied from Kaikz's PaperToss.
+SearchApp "PaperToss World Tour (with ads)" "PaperTossWorldTourFree.app" "http://appshopper.com/games/paper-toss-world-tour-now-free"
+if [ $? = 1 ]; then
+plutil -key '__ASSKBC._d' -type bool -value 'true' "$tempLoc/../Library/Preferences/com.backflipstudios.papertossworldtourfree.plist" 2>&1> /dev/null
+Success
+fi
+
+# This one is from Scruffy32.
+SearchApp "Parachute Ninja" "Ninja.app" "http://appshopper.com/games/parachute-ninja"
+if [ $? = 1 ]; then
+plutil -key 'CHARACTER_AGENT' -type int -value '1' "$tempLoc/../Library/Preferences/com.freeverse.ninja.plist" 2>&1> /dev/null
+plutil -key 'CHARACTER_PIRATE' -type int -value '1' "$tempLoc/../Library/Preferences/com.freeverse.ninja.plist" 2>&1> /dev/null
+plutil -key 'CHARACTER_ROUNDY' -type int -value '1' "$tempLoc/../Library/Preferences/com.freeverse.ninja.plist" 2>&1> /dev/null
+Success
+fi
+
 # Thanks to Alidsl
 SearchApp "Peggle" "Peggle.app" "http://appshopper.com/games/peggle"
 if [ $? = 1 ]; then
 plutil -key 'store.nights.unlock' -type bool -value 'true' "$tempLoc/../Library/Preferences/com.popcap.Peggle.plist" 2>&1> /dev/null
+Success
+fi
+
+# This one is from Tiantou.
+SearchApp "Photogene for iPad" "Photogene.app" "http://appshopper.com/photography/photogene-for-ipad"
+if [ $? = 1 ]; then
+plutil -key PGInAppFeaturesFramesBundle1Key -1 "$tempLoc/../Library/Preferences/com.mobilepond.ipadphotogene.plist" 2>&1> /dev/null
+plutil -key PGInAppFeaturesGoProKey -1 "$tempLoc/../Library/Preferences/com.mobilepond.ipadphotogene.plist" 2>&1> /dev/null 
 Success
 fi
 
@@ -434,6 +515,12 @@ fi
 #       plutil -key 'featureBPurchased' -1 "$tempLoc/../Library/Preferences/com.stepcase.phototreats.plist" 2>&1> /dev/null
 #       Success
 #fi
+
+SearchApp "Pilot Winds" "PilotWinds.app" "http://appshopper.com/games/pilot-winds"
+if [ $? = 1 ]; then
+plutil -key 'global.full' -type bool -value 'true' "$tempLoc/../Library/Preferences/com.twolivesleft.inClineFlight.plist" 2>&1> /dev/null
+Success
+fi
 
 SearchApp "Pocket Frogs" "Pocket Frogs.app" "http://appshopper.com/games/pocket-frogs"
 if [ $? = 1 ]; then
@@ -549,6 +636,46 @@ dd bs=1 seek=104 conv=notrunc status=noxfer of="$tempLoc/../Documents/BestPerson
 Success
 fi
 
+# This one is from Kingmoe738.
+SearchApp "ShaveMe" "ShaveMe.app" "http://appshopper.com/entertainment/shave-me"
+if [ $? = 1 ]; then
+plutil -key 'com.metaversalstudios.shaveMe.shaveKit' -type bool -value 'true' "$tempLoc/../Library/Preferences/com.metaversalstudios.shaveMe.plist" 2>&1> /dev/null
+Success
+fi
+
+SearchApp "SI SwimSuit 2011" "Swimsuit.app" "http://appshopper.com/sports/si-swimsuit-2011"
+if [ $? = 1 ]; then
+p="$tempLoc/../Library/Preferences/com.timeinc.si.swimsuit2011.plist"
+plutil -key 'isupgraded' -value 'yes' "$p" 2>&1> /dev/null
+Success
+fi
+
+SearchApp "Solomon's Keep" "SK.app" "http://appshopper.com/games/solomons-keep"
+if [ $? = 1 ]; then
+if [ ! -e "$tempLoc/../Library/Preferences/com.raptisoft.solomonskeep.plist" ]; then
+plutil -create "$tempLoc/../Library/Preferences/com.raptisoft.solomonskeep.plist" 2>&1> /dev/null
+chmod 666 "$tempLoc/../Library/Preferences/com.raptisoft.solomonskeep.plist"
+fi
+plutil -key 'com.raptisoft.solomonskeep.wizardskins' -1 "$tempLoc/../Library/Preferences/com.raptisoft.solomonskeep.plist" 2>&1> /dev/null
+plutil -key 'com.raptisoft.solomonskeep.pimpmycabinet' -1 "$tempLoc/../Library/Preferences/com.raptisoft.solomonskeep.plist" 2>&1> /dev/null
+# com.raptisoft.solomonskeep.coldmagic
+Success
+fi
+
+# This one is from Scruffy32.
+SearchApp "Soundrop" "Soundrop.app" "http://appshopper.com/music/soundrop"
+if [ $? = 1 ] ; then
+plutil -key "com.develoe.soundrop.pro" -type bool -value 'true' "$tempLoc/../Library/Preferences/com.develoe.soundrop.plist" 2>&1> /dev/null
+Success
+fi 
+
+# This one is from Fusen.
+SearchApp "SteadyCamPro" "SteadyCam.app" "http://appshopper.com/photography/steadycam-pro"
+if [ $? = 1 ]; then
+plutil -key 'com.elyxa.steadycam.unlock' -type bool -value 'true' "$tempLoc/../Library/Preferences/com.elyxa.steadycam.plist" 2>&1> /dev/null
+Success
+fi
+
 SearchApp "Super Slyder" "SuperSlyder.app" "http://appshopper.com/games/super-slyder"
 if [ $? = 1 ]; then
 if [ ! -e /usr/bin/wget ]; then
@@ -610,6 +737,14 @@ plutil -key 'IAPVivaLaTurretPurchased' -1 "$tempLoc/../Library/Preferences/com.o
 Success
 fi
 
+# This one is from Fabius.
+SearchApp "ToonPaint" "testPicker.app" "http://appshopper.com/photography/toonpaint"
+if [ $? = 1 ]; then
+plutil -key 'com.toonfx.ToonPAINT.alphabrushupsell' -1 "$tempLoc/../Library/Preferences/com.toon-fx.ToonPAINT.plist" 2>&1> /dev/null
+plutil -key 'com.toonfx.ToonPAINT.autocolor' -1 "$tempLoc/../Library/Preferences/com.toon-fx.ToonPAINT.plist" 2>&1> /dev/null
+Success
+fi
+
 # Thanks to Tootired for the update.
 SearchApp "TurboGrafx GameBox (Nec PC Engine)" "iPhone_PCE_en.app" "http://appshopper.com/games/turbografx-16-gamebox"
 if [ $? = 1 ]; then
@@ -626,11 +761,12 @@ plutil -key 'isUpgradePurchased' -type bool -value 'true' "$tempLoc/../Library/P
 Success
 fi
 
-SearchApp "ZitPicker" "Zit\ Picker.app" "http://appshopper.com/entertainment/zit-picker-%E2%98%85"
+SearchApp "ZitPicker (old)" "Zit\ Picker.app" "http://appshopper.com/entertainment/zit-picker-%E2%98%85"
 if [ $? = 1 ]; then
 plutil -key 'myFriendsKey' -type int -value '1' "$tempLoc/../Documents/myFriends.plist" 2>&1> /dev/null
 Success
 fi
+# (The newer, "http://appshopper.com/games/zit-picker", doesn't need it).
 
 SearchApp "Zombie Café" "ZombieCafe.app" "http://appshopper.com/games/zombie-cafe"
 if [ $? = 1 ]; then

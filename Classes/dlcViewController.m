@@ -25,8 +25,10 @@
 	}
 	
 	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#dlc.sh" dickBadge:@"Info" actionBlock:^{
+        NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+        NSString *version = [NSString stringWithFormat:@"haxie %@",bundleVersion];
 		UIAlertView *info = [[UIAlertView alloc]
-							 initWithTitle:@"haxie 1.4"
+							 initWithTitle:version
 							 message:@"Visit\nhttp://hackulo.us for more information about dlc.sh.\n\nKaikz 2011\nhttp://pwncraft.net"
 							 delegate:self
 							 cancelButtonTitle:@"Ok!"

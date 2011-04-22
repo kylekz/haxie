@@ -17,8 +17,10 @@
 	[background release];
 	
 	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#LevelUnlocker" dickBadge:@"Info" actionBlock:^{
+        NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+        NSString *version = [NSString stringWithFormat:@"haxie %@",bundleVersion];
 		UIAlertView *info = [[UIAlertView alloc]
-							 initWithTitle:@"haxie 1.4"
+							 initWithTitle:version
 							 message:@"LevelUnlocker by Ramsey\nTwitter: @iamramsey\n\nKaikz 2011\nhttp://pwncraft.net"
 							 delegate:self
 							 cancelButtonTitle:@"Ok!"

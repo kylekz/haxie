@@ -17,8 +17,8 @@
 	[background release];
 	
 	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#LevelUnlocker" dickBadge:@"Info" actionBlock:^{
-        NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-        NSString *version = [NSString stringWithFormat:@"haxie %@",bundleVersion];
+        NSString *haxieVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+        NSString *version = [NSString stringWithFormat:@"haxie %@",haxieVersion];
 		UIAlertView *info = [[UIAlertView alloc]
 							 initWithTitle:version
 							 message:@"LevelUnlocker by Ramsey\nTwitter: @iamramsey\n\nKaikz 2011\nhttp://pwncraft.net"
@@ -37,6 +37,7 @@
 	{
 		NSURL *url = [ [ NSURL alloc ] initWithString: @"http://hackulo.us/forums/index.php?/topic/103893-release-levelunlocker/" ];
 		[[UIApplication sharedApplication] openURL:url];
+        [url release];
 	}
 }
 

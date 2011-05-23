@@ -16,8 +16,7 @@
 	self.view.backgroundColor = background;
 	[background release];
 	NSFileManager *fm = [NSFileManager defaultManager];
-	NSString *plutil;
-	plutil = @"/usr/bin/plutil";
+	NSString *plutil = @"/usr/bin/plutil";
 	if (![fm fileExistsAtPath:plutil]) {
 		UIAlertView *nopl = [[UIAlertView alloc] initWithTitle:@"haxie" message:@"You don't have Erica Utilities installed.\n\nhaxie will not function if you don't have it." delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
 		[nopl show];
@@ -25,8 +24,8 @@
 	}
 	
 	UIDickBar *dickBar = [[UIDickBar alloc] initWithDickTitle:@"#dlc.sh" dickBadge:@"Info" actionBlock:^{
-        NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-        NSString *version = [NSString stringWithFormat:@"haxie %@",bundleVersion];
+        NSString *haxieVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+        NSString *version = [NSString stringWithFormat:@"haxie %@",haxieVersion];
 		UIAlertView *info = [[UIAlertView alloc]
 							 initWithTitle:version
 							 message:@"Visit\nhttp://hackulo.us for more information about dlc.sh.\n\nKaikz 2011\nhttp://pwncraft.net"
@@ -43,8 +42,9 @@
 - (void)alertView:(UIAlertView *)info clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 1)
 	{
-		NSURL *url = [ [ NSURL alloc ] initWithString: @"http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/" ];
+		NSURL *url = [[NSURL alloc] initWithString: @"http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/" ];
 		[[UIApplication sharedApplication] openURL:url];
+        [url release];
 	}
 }
 

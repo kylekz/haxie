@@ -1,5 +1,5 @@
 dlc.sh .................: http://hackulo.us/forums/index.php?/topic/64148-release-dlcsh/
-LevelUnlocker ..........: http://hackulo.us/forums/index.php?/topic/103893-release-levelunlocker/
+LevelUnlocker ..........: https://github.com/rmsy/LevelUnlocker
 
 Thanks to Rastignac, dlc.sh now updates the /var/mobile/supported_dlc.txt list of apps when you press the Supported Apps button.
 
@@ -12,6 +12,7 @@ LevelUnlocker's /var/mobile/supported_levelunlocker.txt is updated by the script
 1.2: Added control Depends for Erica Utilites and an in-app check for it.
 1.3: Added annoying UIDickBar.
 1.4: Updated dlc.sh to v0.4.9 (2011-02-28), LevelUnlocker to 0.3.1, replaced navbars with UIDickBars, tab 'em for more info, removed (i) info buttons, changed supported apps button to go to Hackulous threads.
+1.4.1: Updated LevelUnlocker to v2.0
 
 Over 9000 internets to cybot2006 for the name, icon and UI design.
 
